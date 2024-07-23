@@ -1,0 +1,38 @@
+{
+	"city_query_parameters": {
+		"relationID": "51800"
+	},
+	"groups": [
+		"city",
+		"road"
+	],
+	"css_path": "styles/example.css",
+	"style_rules": {
+		"static": [
+			{
+				"key": "^type$",
+				"value": "^multipolygon$",
+				"class": "area"
+			},
+			{
+				"key": "^highway$",
+				"value": "^service$",
+				"class": "service"
+			}
+		],
+		"dynamic": [
+			{
+				"key": "^maxspeed(:.+)*$",
+				"value": "[0-9]+(\\.[0-9]+){0,}( (mph)){0,1}",
+				"group": "road",
+				"style": [
+					{
+						"property": "stroke",
+						"value": "hsl({value}, 100%, 50%)"
+					}
+				],
+				"module": "path_styler_example"
+			}
+		]
+	}
+}

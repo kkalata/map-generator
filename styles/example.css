@@ -1,0 +1,18 @@
+.city {
+	stroke: black;
+	stroke-width: 2px;
+	fill: beige;
+}
+
+.road {
+	stroke: silver;
+	stroke-width: 1.5px;
+	stroke-linecap: round;
+	fill: none;
+}
+
+text {
+	font-family: "Noto Sans", "Arial", sans-serif;
+	font-weight: bold;
+	text-anchor: end;
+}
