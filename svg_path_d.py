@@ -15,14 +15,11 @@ class PathD:
 class WayD:
     def __init__(self, geometry):
         self.d = []
-        first = True
 
-        for node in geometry:
-            if first:
-                self.d.append(svg.M(**mercator.Mercator.node(node)))
-                first = False
-            else:
-                self.d.append(svg.L(**mercator.Mercator.node(node)))
+        self.d.append(svg.M(**mercator.Mercator.node(geometry[0])))
+
+        for node in geometry[1:]:
+            self.d.append(svg.L(**mercator.Mercator.node(node)))
 
 
 class MultipolygonD:
